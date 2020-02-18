@@ -3,4 +3,23 @@
     <h1 class="display-4">EventDark</h1>
     <p class="lead">Bienvenue sur EventDark, pour ceux qui adorent les plans obscurs dans les ruelles mal éclairées.</p>
   </div>
+  <p class="lead">
+    <%= link_to "Créer un plan obscur", new_event_path, class: "btn btn-primary btn-lg" %>
+  </p>
+</div>
+
+<div>
+  <h2>Les bails chelous qui ont déjà été créés:</h2>
+  <% Event.all.each do |event| %>  
+<div class="cards-div">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Titre:</strong> <%= event.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Qui a fait ça ? <%=link_to event.admin.first_name, user_path(event.admin.id) %></h6>
+    <p class="card-text"><%=h truncate(event.description, :length => 30) %></p>
+    <a class="card-link"><%= link_to 'Le bail m\'intrigue', event_path(event.admin.id) %></a>
+  </div>
+</div>
+</div>
+  <% end %>
 </div>
