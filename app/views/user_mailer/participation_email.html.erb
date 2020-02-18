@@ -6,7 +6,7 @@
   <body>
     <h1>Salut <%= @event.user.first_name %> et bienvenue chez nous !</h1>
     <p>
-      Tu t'es inscrit a l'evenement xxx en utilisant l'e-mail suivant : <%= @user.email %>.
+      Tu t'es inscrit a l'evenement xxx en utilisant l'e-mail suivant : <%= @event.user.email %>.
     </p>
     <p>
       Pour accéder à la page de l'evenement, connecte-toi via : <%= @url %>.
