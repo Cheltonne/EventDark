@@ -30,7 +30,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <%= link_to "Créer un évènement", new_event_path, class: 'dropdown-item' %>
-          <a class="dropdown-item" href="#">Liste des évènements</a>
+        <%= link_to "Liste des évènements", events_path(:id), class: 'dropdown-item' %>
         </div>
       </li>
       <% unless user_signed_in? %>  
