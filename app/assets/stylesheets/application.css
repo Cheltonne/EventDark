@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .jumbotron{
+   background: url("gray.jpg") center center no-repeat;
+   background-size: cover;
+   background-position: bottom;
+   min-height: 50%;
+   height: 450px;
+   color: snow;
+   text-align: center;
+   padding-top: 10rem;
+   padding-bottom: 10rem;
+   text-shadow: 2px 2px #000;
+ }

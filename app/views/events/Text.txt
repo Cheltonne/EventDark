@@ -1,0 +1,22 @@
+<div class="text-center mt-5">
+<h1>Créer un nouveau bail obscur.</h1>
+<% if @errors%>
+  <% @errors.messages.each do |message|%>
+  <div class="alert alert-danger" role="alert">
+  Le champ <%= message[0] %> a le problème suivant: <%= message[1][0] %>
+  </div>
+    <% end%>
+  <% end %>
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <%= label_tag 'Nom du bail mystique' %>
+  <%= text_field_tag 'title' %>
+  <br /> <br />
+
+  <%= label_tag 'Description du pur bail' %>
+  <%= text_area_tag 'body' %>
+  <br /> <br />
+
+  <%= submit_tag "Creer son plan chelou" %>
+
+  <% end %>
+  </div>
