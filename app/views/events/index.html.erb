@@ -8,8 +8,9 @@
   </p>
 </div>
 
-<div>
+<div class="text-center" style="border: 1px solid black;">
   <h2>Les bails chelous qui ont déjà été créés:</h2>
+  <div class="center-div">
   <% Event.all.each do |event| %>  
 <div class="cards-div">
   <div class="card" style="width: 18rem;">
@@ -17,9 +18,10 @@
     <h5 class="card-title"><strong>Titre:</strong> <%= event.title %></h5>
     <h6 class="card-subtitle mb-2 text-muted">Qui a fait ça ? <%=link_to event.admin.first_name, user_path(event.admin.id) %></h6>
     <p class="card-text"><%=h truncate(event.description, :length => 30) %></p>
-    <a class="card-link"><%= link_to 'Le bail m\'intrigue', event_path(event.admin.id) %></a>
+    <a class="card-link"><%= link_to 'Le bail m\'intrigue', event_path(event.id) %></a>
   </div>
 </div>
 </div>
   <% end %>
+</div>
 </div>
